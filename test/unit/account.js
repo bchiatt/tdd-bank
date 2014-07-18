@@ -36,7 +36,7 @@ describe ('Account', function(){
 
       expect(sara.isActive).to.equal(true);
       expect(sara.penalty).to.equal(0);
-      
+
       for(var i = 0; i < 4; i++){
         sara.withdraw(2000);
       }

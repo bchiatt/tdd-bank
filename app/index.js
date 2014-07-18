@@ -4,7 +4,7 @@
 //var = new ('');
 //var  = new('');
 
-//.sleep();
+//.();
 
 //console.log('');
 //console.log('');

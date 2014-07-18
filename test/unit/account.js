@@ -30,14 +30,19 @@ describe ('Account', function(){
       expect(sara.deposits).to.have.length(1);
     });
   });
-  describe ('#deposit', function(){
-    it ('should deposit money into the account',function(){
+  describe ('#withdraw', function(){
+    it ('should withdraw money from the account and assess fee in below 0',function(){
       var sara = new Account(3, 'Sara', 'savings', 1500);
 
-      sara.withdraw(1000);
+      expect(sara.isActive).to.equal(true);
+      expect(sara.penalty).to.equal(0);
+      
+      for(var i = 0; i < 4; i++){
+        sara.withdraw(2000);
+      }
 
-      expect(sara.balance).to.equal(500);
-      expect(sara.withdraw).to.have.length(1);
+      expect(sara.balance).to.equal(-4650);
+      expect(sara.withdraws).to.have.length(3);
     });
   });
 });

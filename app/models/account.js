@@ -8,6 +8,8 @@ function Account(number,name,type,balance){
   
   this.deposits = [];
   this.withdraws = [];
+  this.isActive = true;
+  this.penalty = 0;
 }
 
 Account.prototype.deposit = function(deposit){
@@ -16,10 +18,18 @@ Account.prototype.deposit = function(deposit){
 };
 
 Account.prototype.withdraw = function(withdraw){
-  this.withdraws.push(withdraw);
-  this.balance -= withdraw;
-  if(this.balance < 0){
-   this.balance -= 50;
+  if(this.isActive === true){
+    this.withdraws.push(withdraw);
+    this.balance -= withdraw;
+  
+    if(this.balance < 0){
+      this.balance -= 50;
+      this.penalty += 1;
+    }
+
+    if(this.penalty >= 3){
+      this.isActive = false;
+    }
   }
 };
 

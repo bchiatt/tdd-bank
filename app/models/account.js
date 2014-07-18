@@ -19,11 +19,13 @@ Account.prototype.deposit = function(deposit){
   }
 };
 
+
+
 Account.prototype.withdraw = function(withdraw){
   if(this.isActive === true){
     this.withdraws.push(withdraw);
     this.balance -= withdraw;
-  
+
     if(this.balance < 0){
       this.balance -= 50;
       this.penalty++;

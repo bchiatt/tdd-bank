@@ -40,9 +40,11 @@ describe ('Account', function(){
       for(var i = 0; i < 4; i++){
         sara.withdraw(2000);
       }
+      sara.deposit(500);
 
       expect(sara.balance).to.equal(-4650);
       expect(sara.withdraws).to.have.length(3);
+      expect(sara.deposits).to.have.length(0);
     });
   });
 });

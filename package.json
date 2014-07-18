@@ -14,6 +14,9 @@
     "url": "https://github.com/bchiatt/tdd-bank.git"
   },
   "author": "Brian Hiatt <brian.hiatt41@gmail.com>",
+  "contributers": [
+    "Logan Richardson <g.logan.richardson@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bchiatt/tdd-bank/issues"
